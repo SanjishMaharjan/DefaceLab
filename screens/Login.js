@@ -24,17 +24,20 @@ import { Formik } from 'formik';
 import { View } from 'react-native';
 import { Octicons, Ionicons, Fontisto } from '@expo/vector-icons';
 import { useState } from 'react';
+// import { useNavigation } from '@react-navigation/native';
+import Signup from './Signup';
 
 // Colors
 const { brand, darkLight, primary } = Colors;
 
 const Login = () => {
   const [hidePassword, setHidePassword] = useState(true);
+  // const navigation = useNavigation();
   return (
     <StyledContainer>
       <StatusBar style="dark" />
       <InnerContainer>
-        <PageLogo resizeMode="cover" source={require('../assets/img/logoblack.png')} />
+        <PageLogo resizeMode="cover" source={require('../assets/img/logowhite.png')} />
         {/* <PageTitle>DefaceLab</PageTitle> */}
         <SubTitle>Account Login</SubTitle>
         <Formik

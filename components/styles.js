@@ -4,10 +4,19 @@ import Constants from 'expo-constants';
 
 const StatusBarHeight = Constants.statusBarHeight;
 
+// export const Colors = {
+//   primary: '#ffffff',
+//   secondary: '#E5E7EB',
+//   tertiary: '#1F2937',
+//   darkLight: '#9CA3AF',
+//   brand: '#6D28D9',
+//   green: '#1eB981',
+//   red: '#EF4444',
+// };
 export const Colors = {
-  primary: '#ffffff',
+  primary: '#030023',
   secondary: '#E5E7EB',
-  tertiary: '#1F2937',
+  tertiary: '#ffffff',
   darkLight: '#9CA3AF',
   brand: '#6D28D9',
   green: '#1eB981',
@@ -21,6 +30,12 @@ export const StyledContainer = styled.View`
   padding: 25px;
   padding-top: ${StatusBarHeight + 20}px;
   background-color: ${primary};
+`;
+export const StyledProfileContainer = styled.View`
+  border-color: ${brand};
+  border-width: 3px;
+  border-radius: 20px;
+  padding: 15px;
 `;
 export const InnerContainer = styled.View`
   flex: 1;
@@ -37,13 +52,13 @@ export const PageTitle = styled.Text`
   font-size: 30px;
   text-align: center;
   font-weight: bold;
-  color: ${brand};
+  color: ${tertiary};
   padding: 10px;
 `;
 
 export const SubTitle = styled.Text`
   font-size: 18px;
-  margin-top: 29px;
+  margin-top: 40px;
   margin-bottom: 29px;
   letter-spacing: 1px;
   font-weight: bold;
@@ -162,8 +177,8 @@ export const MediaContainer = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 130px;
 `;
 
 export const ResultTitle = styled.Text`
@@ -172,13 +187,13 @@ export const ResultTitle = styled.Text`
   font-weight: bold;
   color: ${brand};
   padding: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 `;
 export const HomepageTitle = styled.Text`
-  font-size: 30px;
+  font-size: 35px;
   text-align: center;
   font-weight: bold;
-  color: ${brand};
+  color: ${tertiary};
   padding: 10px;
   padding-bottom: 40px;
 `;
@@ -189,7 +204,7 @@ export const HomePageLogo = styled.Image`
 
 export const HeroImageContainer = styled.View`
   width: 300px;
-  height: 300px;
+  height: 400px;
   border-radius: 20px;
   shadow-color: #000;
   shadow-offset: {
@@ -204,7 +219,7 @@ export const HeroImageContainer = styled.View`
 
 export const HeroImage = styled.Image`
   width: 300px;
-  height: 300px;
+  height: 400px;
   border-radius: 20px;
 `;
 

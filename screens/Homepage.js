@@ -89,7 +89,7 @@ const Homepage = () => {
             </StyledMediaButton>
           </MediaContainer>
           <Line />
-          <ResultTitle>Result</ResultTitle>
+          <HomepageTitle>Result</HomepageTitle>
           {imgUrl && (
             <Image
               resizeMethod="contain"
@@ -106,11 +106,11 @@ const Homepage = () => {
               source={{ uri: imgUrl }}
             />
           )}
-          <ResultTitle>Analysis results for provided image:</ResultTitle>
+          <ResultTitle>Analysis results</ResultTitle>
           <ResultTitle>Real</ResultTitle>
           <ProgessBar>
-            <ProgressBarText>{40}%</ProgressBarText>
             <Progress percentage={40} />
+            <ProgressBarText>{40}%</ProgressBarText>
           </ProgessBar>
           <ResultTitle>Fake</ResultTitle>
           <ProgessBar>
