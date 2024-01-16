@@ -20,10 +20,12 @@ export const Colors = {
   darkLight: '#9CA3AF',
   brand: '#6D28D9',
   green: '#1eB981',
+  real: '#228B22',
+  fake: '#DC143C ',
   red: '#EF4444',
 };
 
-const { primary, secondary, tertiary, darkLight, brand, green, red } = Colors;
+const { primary, secondary, tertiary, darkLight, brand, green, red, fake, real } = Colors;
 
 export const StyledContainer = styled.View`
   flex: 1;
@@ -32,8 +34,9 @@ export const StyledContainer = styled.View`
   background-color: ${primary};
 `;
 export const StyledProfileContainer = styled.View`
-  border-color: ${brand};
-  border-width: 3px;
+  margin-top: 50px;
+  border-color: ${darkLight};
+  border-width: 1px;
   border-radius: 20px;
   padding: 15px;
 `;
@@ -118,6 +121,18 @@ export const StyledButton = styled.TouchableOpacity`
   gap: 20px;
   justify-content: center;
   `}
+  ${(props) =>
+    props.logout == true &&
+    `
+  background-color: ${red};
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-vertical: 20px;
+  height: 60px;
+  width: 90%;
+  gap: 20px;
+  `}
 `;
 
 export const ButtonText = styled.Text`
@@ -185,7 +200,7 @@ export const ResultTitle = styled.Text`
   font-size: 20px;
   text-align: center;
   font-weight: bold;
-  color: ${brand};
+  color: ${darkLight};
   padding: 20px;
   padding-bottom: 20px;
 `;
@@ -239,7 +254,7 @@ export const ProgressBarText = styled.Text`
 export const Progress = styled.View`
   height: 100%;
   width: ${({ percentage }) => (percentage ? percentage + '%' : '0%')};
-  background-color: ${Colors.brand};
+  background-color: ${Colors.green};
   align-items: center;
   justify-content: center;
 `;

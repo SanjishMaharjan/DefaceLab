@@ -24,11 +24,12 @@ import { Formik } from 'formik';
 import { View, TouchableOpacity } from 'react-native';
 import { Octicons, Ionicons } from '@expo/vector-icons';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { useNavigation } from '@react-navigation/native';
 
 // Colors
 const { brand, darkLight } = Colors;
-
 const Signup = () => {
+  const navigation = useNavigation();
   const [hidePassword, setHidePassword] = useState(true);
   const [show, setShow] = useState(false);
   const [date, setDate] = useState(new Date(2000, 0, 1));
@@ -49,7 +50,7 @@ const Signup = () => {
     <StyledContainer>
       <StatusBar style="dark" />
       <InnerContainer>
-        <PageTitle>DefaceLab</PageTitle>
+        <PageTitle>DeFaceLab</PageTitle>
         <SubTitle>Account Signup</SubTitle>
         {show && (
           <DateTimePicker testID="dateTimePicker" value={date} mode="date" display="default" onChange={onChange} />
@@ -126,7 +127,7 @@ const Signup = () => {
               <Line />
               <ExtraView>
                 <ExtraText>Already have an account ?</ExtraText>
-                <TextLink>
+                <TextLink onPress={() => navigation.navigate('Login')}>
                   <TextLinkContent>Login</TextLinkContent>
                 </TextLink>
               </ExtraView>

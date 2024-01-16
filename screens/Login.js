@@ -24,15 +24,14 @@ import { Formik } from 'formik';
 import { View } from 'react-native';
 import { Octicons, Ionicons, Fontisto } from '@expo/vector-icons';
 import { useState } from 'react';
-// import { useNavigation } from '@react-navigation/native';
-import Signup from './Signup';
+import { useNavigation } from '@react-navigation/native';
 
 // Colors
 const { brand, darkLight, primary } = Colors;
 
 const Login = () => {
   const [hidePassword, setHidePassword] = useState(true);
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
   return (
     <StyledContainer>
       <StatusBar style="dark" />
@@ -82,7 +81,7 @@ const Login = () => {
               </StyledButton>
               <ExtraView>
                 <ExtraText>Don't have an account already?</ExtraText>
-                <TextLink>
+                <TextLink onPress={() => navigation.navigate('Signup')}>
                   <TextLinkContent>Signup</TextLinkContent>
                 </TextLink>
               </ExtraView>

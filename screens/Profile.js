@@ -1,37 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { View, Image, TouchableOpacity, Text, Switch } from 'react-native';
-import { Ionicons } from '@expo/vector-icons'; // Assuming you are using Expo, adjust the import accordingly
+import React, { useState } from 'react';
+import { View, Switch } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native'; // Import useNavigation hook
 import {
   StyledContainer,
   InnerContainer,
   PageTitle,
   ResultTitle,
-  ProgessBar,
-  Progress,
-  ProgressBarText,
   Colors,
+  StyledButton,
+  ButtonText,
   StyledProfileContainer,
 } from '../components/styles';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView } from 'react-native';
 
-const { brand, darkLight, primary } = Colors;
+const { brand, darkLight, primary, tertiary } = Colors;
 
 const Profile = () => {
   const [darkTheme, setDarkTheme] = useState(false);
+  const navigation = useNavigation(); // Initialize the navigation object
 
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
   };
 
+  const handleLogout = () => {
+    // Add any logout logic here
+    // ...
+
+    // Navigate to the home page after logout
+    navigation.navigate('Home');
+  };
+
   return (
-    <ScrollView style={{ backgroundColor: darkTheme ? darkLight : primary }} contentContainerStyle={{ flexGrow: 1 }}>
+    <ScrollView style={{ backgroundColor: darkTheme ? primary : tertiary }} contentContainerStyle={{ flexGrow: 1 }}>
       <StyledContainer>
+        <PageTitle>DeFaceLab</PageTitle>
         <StyledProfileContainer>
           <StatusBar style={darkTheme ? 'light' : 'dark'} />
           <InnerContainer>
             {/* Profile Icon */}
-            <Ionicons name="person-circle-outline" size={100} color={brand} />
+            <Ionicons name="person-circle-outline" size={100} color={darkLight} />
 
             {/* Profile Information */}
             <PageTitle>Profile</PageTitle>
@@ -52,10 +62,13 @@ const Profile = () => {
               <Switch
                 value={darkTheme}
                 onValueChange={toggleTheme}
-                thumbColor={darkTheme ? brand : '#f4f3f4'}
-                trackColor={{ true: darkLight, false: '#f4f3f4' }}
+                thumbColor={darkTheme ? brand : tertiary}
+                trackColor={{ true: darkLight, false: tertiary }}
               />
             </View>
+            <StyledButton logout={true} onPress={handleLogout}>
+              <ButtonText>Logout</ButtonText>
+            </StyledButton>
           </InnerContainer>
         </StyledProfileContainer>
       </StyledContainer>

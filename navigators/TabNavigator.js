@@ -7,6 +7,7 @@ import Signup from '../screens/Signup';
 import Profile from '../screens/Profile';
 import { Colors } from '../components/styles';
 import { StyleSheet } from 'react-native';
+import History from '../screens/History';
 
 const Tab = createBottomTabNavigator();
 const { primary } = Colors;
@@ -20,19 +21,17 @@ const TabNavigator = () => {
         tabBarShowLabel: false,
         tabBarStyle: Styles.tabBarStyle,
         tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
+          var iconName;
 
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === 'Login') {
             iconName = focused ? 'log-in' : 'log-in-outline';
-          } else if (route.name === 'Signup') {
-            iconName = focused ? 'person-add' : 'person-add-outline';
+          } else if (route.name === 'History') {
+            iconName = focused ? 'time' : 'time-outline';
           } else if (route.name === 'Profile') {
             iconName = focused ? 'person' : 'person-outline';
           }
-
-          // You can return any component here, such as an Image or a custom icon component
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
@@ -43,7 +42,7 @@ const TabNavigator = () => {
     >
       <Tab.Screen name="Home" component={Homepage} />
       <Tab.Screen name="Login" component={Login} />
-      <Tab.Screen name="Signup" component={Signup} />
+      <Tab.Screen name="History" component={History} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );

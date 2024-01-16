@@ -72,7 +72,7 @@ const Homepage = () => {
         <StatusBar style="dark" />
         <InnerContainer>
           {/* <HomePageLogo resizeMode="cover" source={require('../assets/img/logoblack.png')} /> */}
-          <HomepageTitle>DefaceLab</HomepageTitle>
+          <HomepageTitle>DeFaceLab</HomepageTitle>
           <HeroImageContainer>
             <HeroImage resizeMode="cover" source={require('../assets/img/facerecognization.gif')} />
           </HeroImageContainer>
