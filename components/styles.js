@@ -23,9 +23,10 @@ export const Colors = {
   real: '#228B22',
   fake: '#DC143C ',
   red: '#EF4444',
+  card: '#0b0640',
 };
 
-const { primary, secondary, tertiary, darkLight, brand, green, red, fake, real } = Colors;
+const { primary, secondary, tertiary, darkLight, brand, green, red, fake, real, card } = Colors;
 
 export const StyledContainer = styled.View`
   flex: 1;
@@ -34,10 +35,9 @@ export const StyledContainer = styled.View`
   background-color: ${primary};
 `;
 export const StyledProfileContainer = styled.View`
-  margin-top: 50px;
-  border-color: ${darkLight};
-  border-width: 1px;
-  border-radius: 20px;
+  margin-top: 70px;
+  background-color: ${Colors.card};
+  border-radius: 35px;
   padding: 15px;
 `;
 export const InnerContainer = styled.View`
@@ -52,7 +52,7 @@ export const PageLogo = styled.Image`
   height: 220px;
 `;
 export const PageTitle = styled.Text`
-  font-size: 30px;
+  font-size: 35px;
   text-align: center;
   font-weight: bold;
   color: ${tertiary};

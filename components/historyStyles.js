@@ -4,40 +4,48 @@ import { Colors } from './styles';
 
 export const HistoryContainer = styled.View`
   width: 100%;
-  padding: 10px;
 `;
 export const HistoryList = styled.View`
   width: 100%;
   border-width: 1px;
-  border-radius: 9px;
-  margin-top: 17px;
-  border-color: ${Colors.darkLight};
+  border-radius: 20px;
+  margin-top: 25px;
+  background-color: ${Colors.card};
+`;
+export const HistoryInnerContainer = styled.View`
+  flex-direction: row;
+  margin-top: 10px;
+  margin-left: 15px;
+  padding: 10px;
   align-items: center;
-  justify-content: space-between;
+`;
+export const HistoryTextContainer = styled.View`
+  flex-direction: column;
 `;
 
 export const HistoryTitle = styled.Text`
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 40px;
   margin-bottom: 29px;
   letter-spacing: 1px;
   font-weight: bold;
   text-align: center;
-  color: ${Colors.tertiary};
+  color: ${Colors.darkLight};
 `;
 
 export const HistoryText = styled.Text`
   padding: 10px;
-  color: white;
+  color: ${Colors.darkLight};
 `;
 export const HistoryResultText = styled.Text`
   padding: 10px;
+  text-align: center;
   font-size: 18px;
 `;
 
 export const HistoryImage = styled.Image`
-  margin: 10px;
   width: 100px;
   height: 100px;
+  margin-right: 10px;
   border-radius: 20px;
 `;

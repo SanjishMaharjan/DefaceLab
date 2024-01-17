@@ -8,6 +8,8 @@ import {
   HistoryResultText,
   HistoryText,
   HistoryTitle,
+  HistoryInnerContainer,
+  HistoryTextContainer,
 } from '../components/historyStyles';
 const HistoryData = [
   { image: require('../assets/img/realelonhead.png'), date: '2022-02-01', size: '3MB', result: 'real' },
@@ -20,8 +22,8 @@ const History = () => {
   return (
     <ScrollView>
       <StyledContainer>
+        <StatusBar style="dark" />
         <HistoryContainer>
-          <StatusBar style="dark" />
           <PageTitle>DeFaceLab</PageTitle>
           <HistoryTitle>Recent Task</HistoryTitle>
 
@@ -30,10 +32,13 @@ const History = () => {
             renderItem={({ item }) => (
               <HistoryList>
                 {/* <Pressable android_ripple={{ color: Colors.brand }}> */}
-                <HistoryImage resizeMode="cover" source={item.image} />
-                <HistoryText>
-                  Date: {item.date} - Size: {item.size}
-                </HistoryText>
+                <HistoryInnerContainer>
+                  <HistoryImage resizeMode="cover" source={item.image} />
+                  <HistoryTextContainer>
+                    <HistoryText>Date: {item.date}</HistoryText>
+                    <HistoryText>Size: {item.size}</HistoryText>
+                  </HistoryTextContainer>
+                </HistoryInnerContainer>
 
                 {/* </Pressable> */}
                 <HistoryResultText style={{ color: item.result === 'real' ? Colors.green : Colors.red }}>

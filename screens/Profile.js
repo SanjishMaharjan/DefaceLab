@@ -14,6 +14,7 @@ import {
 } from '../components/styles';
 import { StatusBar } from 'expo-status-bar';
 import { ScrollView } from 'react-native';
+import { StyledProfileTextTitle } from '../components/Profile.Styles';
 
 const { brand, darkLight, primary, tertiary } = Colors;
 
@@ -37,20 +38,22 @@ const Profile = () => {
     <ScrollView style={{ backgroundColor: darkTheme ? primary : tertiary }} contentContainerStyle={{ flexGrow: 1 }}>
       <StyledContainer>
         <PageTitle>DeFaceLab</PageTitle>
+        <StatusBar style={darkTheme ? 'light' : 'dark'} />
         <StyledProfileContainer>
-          <StatusBar style={darkTheme ? 'light' : 'dark'} />
           <InnerContainer>
             {/* Profile Icon */}
             <Ionicons name="person-circle-outline" size={100} color={darkLight} />
 
             {/* Profile Information */}
             <PageTitle>Profile</PageTitle>
-            <ResultTitle>
-              <Ionicons name="person-outline" size={20} color={brand} /> Username: Sanjish Maharjan
-            </ResultTitle>
-            <ResultTitle>
-              <Ionicons name="mail-outline" size={20} color={brand} /> Email: sanjishmaharjan619@gmail.com
-            </ResultTitle>
+            <StyledProfileTextTitle title={true}>
+              <Ionicons name="person-outline" size={20} color={brand} /> Username:
+              <StyledProfileTextTitle> Sanjish Maharjan</StyledProfileTextTitle>
+            </StyledProfileTextTitle>
+            <StyledProfileTextTitle title={true}>
+              <Ionicons name="mail-outline" size={20} color={brand} /> Email:
+              <StyledProfileTextTitle>sanjishmaharjan619@gmail.com</StyledProfileTextTitle>
+            </StyledProfileTextTitle>
 
             {/* Toggle Theme Button */}
             <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: 20 }}>
